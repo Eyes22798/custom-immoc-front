@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
+import IsMobileTerminal from './components/isMobileTerminal.vue'
+import './assets/styles/index.scss'
 </script>
 
 <template>
-  <div>
+  <div class="text-ellipsis">
     <a href="https://vitejs.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />
     </a>
@@ -11,6 +13,7 @@ import HelloWorld from './components/HelloWorld.vue'
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
+  <IsMobileTerminal />
   <HelloWorld msg="Vite + Vue" />
 </template>
 
