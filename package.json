@@ -15,12 +15,15 @@
   "dependencies": {
     "@vueuse/core": "^10.11.0",
     "axios": "^1.7.2",
+    "js-cookie": "^3.0.5",
+    "pinia": "^2.2.0",
     "vue": "^3.4.31",
     "vue-router": "^4.4.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^18.4.4",
     "@commitlint/config-conventional": "^18.4.4",
+    "@types/axios": "^0.14.0",
     "@types/node": "^20.14.12",
     "@typescript-eslint/eslint-plugin": "^6.19.0",
     "@typescript-eslint/parser": "^6.19.0",
@@ -43,6 +46,7 @@
     "tailwindcss": "^3.4.6",
     "typescript": "^5.2.2",
     "vite": "^5.3.4",
+    "vite-plugin-svg-icons": "^2.0.1",
     "vue-tsc": "^2.0.24"
   },
   "config": {
