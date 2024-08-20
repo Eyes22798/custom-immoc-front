@@ -39,6 +39,9 @@ export default defineConfig({
       ],
       dirs: ['./hooks', './hooks/**', './components', './components/**'],
       dts: true,
+      eslintrc: {
+        enabled: true
+      },
       resolvers: [IconsResolver()]
     }),
     // 热重载，包含配置文件的修改

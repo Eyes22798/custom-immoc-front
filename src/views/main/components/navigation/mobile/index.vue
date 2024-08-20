@@ -15,7 +15,6 @@
 </template>
 
 <script setup lang="ts">
-  import { ref, onBeforeUpdate } from 'vue'
   // import { useScroll } from '@vueuse/core'
   import { getStoreRefs, appStore } from '@/store'
 
@@ -45,10 +44,12 @@
     itemRefs = []
   })
   const { categorys } = getStoreRefs(appStore.useCategory)
-  console.log(categorys)
+  categorys.value.forEach((category: any) => {
+    console.log(category)
+  })
 
-  // watch(
-  //   () => categorys.value,
-  //   () => {}
-  // )
+  watch(
+    () => categorys.value,
+    () => {}
+  )
 </script>
