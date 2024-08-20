@@ -3,6 +3,7 @@ export default {
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      // 指定 taliwind font-size 基准值
       fontSize: {
         xs: ['0.25rem', '0.35rem'],
         sm: ['0.35rem', '0.45rem'],

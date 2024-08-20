@@ -1,6 +1,6 @@
 <template>
-  <div class="bg-white sticky top-0 left-0 z-10">
-    <ul class="relative flex overflow-x-auto p-1 text-xs text-zinc-600 overflow-hidden">
+  <div class="bg-white dark:bg-zinc-900 duration-500 sticky top-0 left-0 z-10">
+    <ul class="relative flex overflow-x-auto p-1 text-xs text-zinc-600 overflow-hidden" ref="ulTarget">
       <!-- 汉堡按钮 -->
       <li
         class="z-20 fixed top-0 right-[-1px] h-4 px-1 flex items-center bg-white dark:bg-zinc-900 shadow-l-white dark:shadow-l-zinc"
@@ -17,7 +17,7 @@
 <script setup lang="ts">
   import { ref, onBeforeUpdate } from 'vue'
   // import { useScroll } from '@vueuse/core'
-  // import { getStoreRefs, appStore } from '@/store'
+  import { getStoreRefs, appStore } from '@/store'
 
   interface Data {
     id: string
@@ -44,7 +44,8 @@
   onBeforeUpdate(() => {
     itemRefs = []
   })
-  // const { categorys } = getStoreRefs(appStore.useCategory)
+  const { categorys } = getStoreRefs(appStore.useCategory)
+  console.log(categorys)
 
   // watch(
   //   () => categorys.value,

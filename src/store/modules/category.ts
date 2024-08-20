@@ -7,10 +7,19 @@ interface Category {
   name: string
 }
 
+interface ICategories {
+  categorys: Array<Category>
+}
+
 export const useCategory = defineStore('category', {
-  state: (): { categorys: Array<Category> } => {
+  state: (): ICategories => {
     return {
       categorys: CATEGORY_NOMAR_DATA as unknown as Array<Category>
+    }
+  },
+  getters: {
+    getCategory(): Array<Category> {
+      return this.categorys
     }
   },
   actions: {

@@ -26,7 +26,17 @@ export default defineConfig({
         /\.vue\?vue/, // .vue
         /\.md$/ // .md
       ],
-      imports: ['vue', 'vue-router', 'pinia', '@vueuse/head', '@vueuse/core', 'vue-i18n'],
+      imports: [
+        'vue',
+        'vue-router',
+        'pinia',
+        {
+          '@/helper/pinia-auto-refs': ['useStore']
+        },
+        '@vueuse/head',
+        '@vueuse/core',
+        'vue-i18n'
+      ],
       dirs: ['./hooks', './hooks/**', './components', './components/**'],
       dts: true,
       resolvers: [IconsResolver()]
