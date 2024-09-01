@@ -1,12 +1,15 @@
 // https://pinia.vuejs.org/ 不必采用高级的setup写法
 import { createPinia, storeToRefs } from 'pinia'
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 
 export interface IAppStore {
   useCategory: ReturnType<typeof useCategory>
+  useTheme: ReturnType<typeof useTheme>
 }
 
 // 创建
 const store = createPinia()
+store.use(piniaPluginPersistedstate)
 
 // 不必额外导入，直接使用此方法
 export const getStoreRefs = (store: any) => {
@@ -14,9 +17,11 @@ export const getStoreRefs = (store: any) => {
 }
 
 import { useCategory } from './modules/category'
+import { useTheme } from './modules/theme'
 
 export const appStore: IAppStore = {
-  useCategory: useCategory(store)
+  useCategory: useCategory(store),
+  useTheme: useTheme(store)
 } as IAppStore
 
 export default store
