@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { getCategory } from '@/api/category'
-import { CATEGORY_NOMAR_DATA } from '@/constants/index'
+import { CATEGORY_NOMAR_DATA, ALL_CATEGORY_ITEM } from '@/constants/index'
 
 interface Category {
   id: number | string
@@ -27,14 +27,14 @@ export const useCategory = defineStore('category', {
      * category选中项下标
      */
     currentCategoryIndex(): number {
-      return this.categorys.findIndex((item) => item.id === this.currentCategory?.id)
+      return this.categorys.findIndex((item) => item.id === this.currentCategory.id) ?? 0
     }
   },
   actions: {
     async setCategorys() {
       const { data } = await getCategory()
 
-      this.categorys = data.categorys
+      this.categorys = [ALL_CATEGORY_ITEM, ...data.categorys]
     },
     /**
      * 切换选中分类
@@ -42,5 +42,11 @@ export const useCategory = defineStore('category', {
     changeCurrentCategory(newCategory: Category) {
       this.currentCategory = newCategory
     }
+  },
+  // 开始数据持久化
+  persist: {
+    key: 'imooc-front', // 修改存储的键名，默认为当前 Store 的 id
+    paths: ['category'], // 需要保存的模块
+    storage: window.sessionStorage // 存储位置修改为 sessionStorage
   }
 })

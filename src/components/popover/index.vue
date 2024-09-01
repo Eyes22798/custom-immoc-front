@@ -19,7 +19,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
   // 延迟关闭时长
   const DELAY_TIME = 100
 

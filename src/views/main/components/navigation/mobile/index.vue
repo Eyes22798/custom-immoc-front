@@ -42,9 +42,6 @@
     id: string
     name: string
   }
-  defineProps<{
-    data: Array<Category>
-  }>()
   const isOpenPopup = ref(false)
   let itemRefs = [] as any
   const setItemRef = (el: any) => {
