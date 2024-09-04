@@ -36,7 +36,7 @@ const changeTheme = (theme: string) => {
       break
   }
   // 修改 html 的 class
-  document.querySelector('html').className = themeClassName
+  ;(document.querySelector('html') as HTMLElement).className = themeClassName
 }
 
 /**

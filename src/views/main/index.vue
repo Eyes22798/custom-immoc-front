@@ -1,11 +1,13 @@
 <template>
-  <div
-    class="h-full overflow-auto bg-white dark:bg-zinc-800 duration-500 scrollbar-thin scrollbar-thumb-transparent xl:scrollbar-thumb-zinc-200 xl:dark:scrollbar-thumb-zinc-900 scrollbar-track-transparent"
-  >
-    <navigationv-vue />
+  <div class="h-full overflow-auto bg-white dark:bg-zinc-800 duration-500">
+    <navigation-vue></navigation-vue>
+    <div class="max-w-screen-xl mx-auto relative m-1 xl:mt-4">
+      <list-vue></list-vue>
+    </div>
   </div>
 </template>
 
-<script setup>
-  import navigationvVue from './components/navigation/index.vue'
+<script setup lang="ts">
+  import navigationVue from './components/navigation/index.vue'
+  import listVue from './components/list/index.vue'
 </script>
