@@ -43,3 +43,8 @@ export const THEME_DARK = 'dark'
 export const THEME_LIGHT = 'light'
 // 系统主题
 export const THEME_SYSTEM = 'system'
+
+// 微博APP Key
+export const WEI_BO_APP_KEY = '3454329089'
+// 微博用户的 UID
+export const WEI_BO_UID = '5984245953'

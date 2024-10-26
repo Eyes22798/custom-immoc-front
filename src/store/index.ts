@@ -5,6 +5,7 @@ import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 export interface IAppStore {
   useCategory: ReturnType<typeof useCategory>
   useTheme: ReturnType<typeof useTheme>
+  useApp: ReturnType<typeof useApp>
 }
 
 // 创建
@@ -18,10 +19,12 @@ export const getStoreRefs = (store: any) => {
 
 import { useCategory } from './modules/category'
 import { useTheme } from './modules/theme'
+import { useApp } from './modules/app'
 
 export const appStore: IAppStore = {
   useCategory: useCategory(store),
-  useTheme: useTheme(store)
+  useTheme: useTheme(store),
+  useApp: useApp(store)
 } as IAppStore
 
 export default store
