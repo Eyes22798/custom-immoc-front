@@ -21,4 +21,7 @@ export interface QueryData {
 /**
  * 获取pexels列表
  */
-export const getPexelsList = (params: QueryData) => request.get<PageData<PexelList>>('/pexels/list', { params })
+export const getPexelsList = (params: QueryData) =>
+  request.get<PageData<PexelList>>('/pexels/list', {
+    params
+  })

@@ -108,7 +108,7 @@ http.interceptors.request.use(
       config.headers['Authorization'] = 'Bearer ' + Cookie.getCookie(cookieKey.token)
     }
 
-    if (config.method?.toLowerCase() === 'get') {
+    if (config.method?.toLowerCase() === 'get' && config.data) {
       config.params = config.data
     }
     return config

@@ -31,11 +31,11 @@
   const props = withDefaults(
     defineProps<{
       data: Array<Record<string, any>> // 数据源
-      nodeKey: string // 唯一标识的 key
-      column: number // 列数
-      columnSpacing: number // 列间距
-      rowSpacing: number // 行间距
-      picturePreReading: boolean // 是否需要进行图片预读取
+      nodeKey?: string // 唯一标识的 key
+      column?: number // 列数
+      columnSpacing?: number // 列间距
+      rowSpacing?: number // 行间距
+      picturePreReading?: boolean // 是否需要进行图片预读取
     }>(),
     {
       nodeKey: '',

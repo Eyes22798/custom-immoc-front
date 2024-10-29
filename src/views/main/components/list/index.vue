@@ -1,8 +1,8 @@
 <template>
   <!-- 列表处理 -->
-  <m-infinite-list v-model="isLoading" :isFinished="isFinished" @onLoad="getPexelsData">
-    <m-waterfall :data="pexelsList" :column="isMobileTerminal ? 2 : 5" :picturePreReading="false" class="w-full px-1">
-      <template v-slot="{ item, width }">
+  <m-infinite-list v-model="isLoading" :is-finished="isFinished" @on-load="getPexelsData">
+    <m-waterfall :data="pexelsList" :column="isMobileTerminal ? 2 : 5" :picture-pre-reading="false" class="w-full px-1">
+      <template #default="{ item, width }">
         <itemVue :data="item" :width="width" />
       </template>
     </m-waterfall>
@@ -71,7 +71,8 @@
     pexelsList.value = []
   }
 
-  const { searchText, currentCategory } = getStoreRefs(appStore.useApp)
+  const { searchText } = getStoreRefs(appStore.useApp)
+  const { currentCategory } = getStoreRefs(appStore.useCategory)
 
   /**
    * 监听搜索内容项的变化
@@ -91,12 +92,12 @@
    * 监听 currentCategory 的变化
    */
   watch(
-    () => currentCategory,
-    (currentCategory) => {
+    () => currentCategory.value,
+    () => {
       // 重置请求参数
       resetQuery({
         page: 1,
-        categoryId: currentCategory.id
+        categoryId: currentCategory.value.id
       })
     }
   )

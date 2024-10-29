@@ -5,14 +5,12 @@ import { defineStore } from 'pinia'
 export const useApp = defineStore('app', {
   state: (): Record<string, any> => {
     return {
-      app: {
-        // 当前选中的分类
-        currentCategory: ALL_CATEGORY_ITEM,
-        // 搜索的文本
-        searchText: '',
-        // 路由跳转类型
-        routerType: 'none'
-      }
+      // 当前选中的分类
+      currentCategory: ALL_CATEGORY_ITEM,
+      // 搜索的文本
+      searchText: '',
+      // 路由跳转类型
+      routerType: 'none'
     }
   },
   actions: {
