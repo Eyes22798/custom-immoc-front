@@ -25,3 +25,16 @@ export const getPexelsList = (params: QueryData) =>
   request.get<PageData<PexelList>>('/pexels/list', {
     params
   })
+
+/**
+ * 获取搜索提示
+ */
+export const getHint = (params: Record<'q', string>) =>
+  request.get<PageData<PexelList>>('/pexels/hit', {
+    params
+  })
+
+/**
+ * 获取推荐主题
+ */
+export const getThemes = () => request.get<Record<'theme', Array<Record<string, string>>>>('/pexels/themes')

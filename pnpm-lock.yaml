@@ -11,6 +11,9 @@ dependencies:
   axios:
     specifier: ^1.7.2
     version: 1.7.2
+  driver.js:
+    specifier: ^1.3.1
+    version: 1.3.1
   file-saver:
     specifier: ^2.0.5
     version: 2.0.5
@@ -106,6 +109,9 @@ devDependencies:
   standard-version:
     specifier: ^9.5.0
     version: 9.5.0
+  tailwind-scrollbar:
+    specifier: ^3.1.0
+    version: 3.1.0(tailwindcss@3.4.6)
   tailwindcss:
     specifier: ^3.4.6
     version: 3.4.6
@@ -3891,6 +3897,10 @@ packages:
       minimatch: 3.1.2
     dev: true
 
+  /driver.js@1.3.1:
+    resolution: {integrity: sha512-MvUdXbqSgEsgS/H9KyWb5Rxy0aE6BhOVT4cssi2x2XjmXea6qQfgdx32XKVLLSqTaIw7q/uxU5Xl3NV7+cN6FQ==}
+    dev: false
+
   /eastasianwidth@0.2.0:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
     dev: true
@@ -7497,6 +7507,15 @@ packages:
 
   /systemjs@6.15.1:
     resolution: {integrity: sha512-Nk8c4lXvMB98MtbmjX7JwJRgJOL8fluecYCfCeYBznwmpOs8Bf15hLM6z4z71EDAhQVrQrI+wt1aLWSXZq+hXA==}
+    dev: true
+
+  /tailwind-scrollbar@3.1.0(tailwindcss@3.4.6):
+    resolution: {integrity: sha512-pmrtDIZeHyu2idTejfV59SbaJyvp1VRjYxAjZBH0jnyrPRo6HL1kD5Glz8VPagasqr6oAx6M05+Tuw429Z8jxg==}
+    engines: {node: '>=12.13.0'}
+    peerDependencies:
+      tailwindcss: 3.x
+    dependencies:
+      tailwindcss: 3.4.6
     dev: true
 
   /tailwindcss@3.4.6:

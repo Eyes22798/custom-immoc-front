@@ -6,6 +6,7 @@ export interface IAppStore {
   useCategory: ReturnType<typeof useCategory>
   useTheme: ReturnType<typeof useTheme>
   useApp: ReturnType<typeof useApp>
+  useSearch: ReturnType<typeof useSearch>
 }
 
 // 创建
@@ -20,11 +21,13 @@ export const getStoreRefs = (store: any) => {
 import { useCategory } from './modules/category'
 import { useTheme } from './modules/theme'
 import { useApp } from './modules/app'
+import { useSearch } from './modules/search'
 
 export const appStore: IAppStore = {
   useCategory: useCategory(store),
   useTheme: useTheme(store),
-  useApp: useApp(store)
+  useApp: useApp(store),
+  useSearch: useSearch(store)
 } as IAppStore
 
 export default store
