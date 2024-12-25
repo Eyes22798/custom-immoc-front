@@ -13,6 +13,14 @@ export interface PexelList {
   tags: string[]
 }
 
+export interface PexelDetail {
+  [k: string]: string | number | string[]
+  title: string
+  photo: string
+  url: string
+  avatar: string
+}
+
 export interface QueryData {
   page: number
   size: number
@@ -38,3 +46,8 @@ export const getHint = (params: Record<'q', string>) =>
  * 获取推荐主题
  */
 export const getThemes = () => request.get<Record<'theme', Array<Record<string, string>>>>('/pexels/themes')
+
+/**
+ * 获取详情数据
+ */
+export const getPexelsFromId = (id: string) => request.get<PexelDetail>(`/pexels/${id}`)
